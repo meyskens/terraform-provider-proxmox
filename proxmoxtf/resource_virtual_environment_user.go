@@ -369,11 +369,14 @@ func resourceVirtualEnvironmentUserUpdate(d *schema.ResourceData, m interface{})
 
 	if d.HasChange(mkResourceVirtualEnvironmentUserPassword) {
 		password := d.Get(mkResourceVirtualEnvironmentUserPassword).(string)
-		err = veClient.ChangeUserPassword(userID, password)
+		if password != "" {
+			err = veClient.ChangeUserPassword(userID, password)
 
-		if err != nil {
-			return err
+			if err != nil {
+				return err
+			}
 		}
+
 	}
 
 	aclArgOld, aclArg := d.GetChange(mkResourceVirtualEnvironmentUserACL)
