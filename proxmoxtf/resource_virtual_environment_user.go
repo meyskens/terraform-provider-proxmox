@@ -123,7 +123,7 @@ func resourceVirtualEnvironmentUser() *schema.Resource {
 			mkResourceVirtualEnvironmentUserPassword: {
 				Type:        schema.TypeString,
 				Description: "The user's password",
-				Required:    true,
+				Required:    false,
 			},
 			mkResourceVirtualEnvironmentUserUserID: {
 				Type:        schema.TypeString,
