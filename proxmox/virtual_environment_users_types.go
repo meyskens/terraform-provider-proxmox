@@ -21,7 +21,7 @@ type VirtualEnvironmentUserCreateRequestBody struct {
 	ID             string           `json:"userid" url:"userid"`
 	Keys           *string          `json:"keys,omitempty" url:"keys,omitempty"`
 	LastName       *string          `json:"lastname,omitempty" url:"lastname,omitempty"`
-	Password       string           `json:"password" url:"password"`
+	Password       string           `json:"password,omitempty" url:"password,omitempty"`
 }
 
 // VirtualEnvironmentUserGetResponseBody contains the body from an user get response.
